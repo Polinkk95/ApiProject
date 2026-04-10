@@ -138,7 +138,7 @@ class LessonServiceTest {
     @Test
     public void createLesson_Success() {
         long lessonID = 1L;
-
+        System.out.println("FFFF");
         Horse horse = new Horse(5L, "Spirit", Breed.AKHAL_TEKE, 10);
         Instructor instructor = new Instructor(4L, "Bob", "Wild", 23, 2);
         Route route = Route.COMPETITION_PREP;
