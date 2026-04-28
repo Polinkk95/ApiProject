@@ -1,6 +1,7 @@
 package org.example.service;
 
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 import org.example.dto.LessonRequest;
 import org.example.dto.LessonResponse;
@@ -22,8 +23,10 @@ import java.util.List;
 
 @Slf4j
 @Service
-@AllArgsConstructor
+@Setter
+@RequiredArgsConstructor
 public class LessonService {
+
 
     private final LessonsRepository lessonsRepository;
 
@@ -32,6 +35,7 @@ public class LessonService {
     private final InstructorRepository instructorRepository;
 
     private final LessonMapping lessonMapping;
+
 
     @Transactional
     public List<LessonResponse> getAllLessons() {

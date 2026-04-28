@@ -6,6 +6,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.example.dto.LessonRequest;
 import org.example.dto.LessonResponse;
 import org.example.service.LessonService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,6 +25,7 @@ import java.util.List;
 @RequestMapping("/api/lessons")
 public class LessonController {
 
+    @Autowired
     private final LessonService lessonService;
 
     @GetMapping
