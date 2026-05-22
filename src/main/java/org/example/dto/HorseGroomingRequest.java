@@ -1,18 +1,22 @@
 package org.example.dto;
 
 import jakarta.validation.constraints.NotNull;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 import org.example.enums.Breed;
+import org.example.enums.Grooming;
 
+import java.util.List;
 import java.util.UUID;
 
 @Getter
 @Setter
-public class HorseRequest {
+@AllArgsConstructor
+public class HorseGroomingRequest {
 
-//    @NotNull(message="Регистрационный номер лошади нужно заполнить")
-//    private UUID registrationNumber;
+    @NotNull(message="Регистрационный номер лошади нужно заполнить")
+    private UUID registrationNumber;
 
     @NotNull(message="Имя лошади нужно заполнить")
     private String name;
@@ -23,10 +27,5 @@ public class HorseRequest {
     @NotNull(message="Возраст лошади нужно указать")
     private Integer age;
 
-    public HorseRequest(String name, Breed breed, Integer age) {
-//        registrationNumber = UUID.randomUUID();
-        this.name = name;
-        this.breed = breed;
-        this.age = age;
-    }
+    private List<Grooming> services;
 }
